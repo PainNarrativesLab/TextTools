@@ -1,7 +1,7 @@
 __author__ = 'adam'
 
 import unittest
-from ConstantsAndUtilities import *
+from Constants import *
 
 
 class IgnoreTest(unittest.TestCase):

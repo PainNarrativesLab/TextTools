@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="607228ec-7341-400e-bab8-a3ea5519ee53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NgramTools.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WordBagMakers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/TextTools.py" afterPath="$PROJECT_DIR$/TextCleaningTools.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/replacers.py" afterPath="$PROJECT_DIR$/StringReplacementTools.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextFiltration.py" afterPath="$PROJECT_DIR$/TextFiltration.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WordBagMakers.py" afterPath="$PROJECT_DIR$/WordBagMakers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_ConstantsAndUtilities.py" afterPath="$PROJECT_DIR$/tests/test_ConstantsAndUtilities.py" />
     </list>
     <ignored path="TextTools.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextCleaningTools.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TextCleaningTools.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TextCleaningTools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.78100264">
-              <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="322" column="0" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
                 <element signature="e#681#706#0" expanded="false" />
@@ -73,6 +70,19 @@
                 <element signature="e#2100#2238#0" expanded="false" />
                 <element signature="e#2370#2393#0" expanded="false" />
                 <element signature="e#2430#2527#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding>
+                <element signature="e#1638#1786#1" expanded="false" />
+                <element signature="e#1896#2019#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -88,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordBagMakers.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WordBagMakers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.8997362">
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -139,10 +149,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/replacers.py" />
         <option value="$PROJECT_DIR$/StringReplacementTools.py" />
-        <option value="$PROJECT_DIR$/WordBagMakers.py" />
         <option value="$PROJECT_DIR$/TextTools.py" />
         <option value="$PROJECT_DIR$/NgramTools.py" />
         <option value="$PROJECT_DIR$/TextCleaningTools.py" />
+        <option value="$PROJECT_DIR$/ConstantsAndUtilities.py" />
+        <option value="$PROJECT_DIR$/Constants.py" />
+        <option value="$PROJECT_DIR$/WordBagMakers.py" />
       </list>
     </option>
   </component>
@@ -422,7 +434,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="380" y="28" width="934" height="878" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26121077" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -503,14 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NgramTools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -539,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TextCleaningTools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.78100264">
-          <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="322" column="0" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
             <element signature="e#681#706#0" expanded="false" />
@@ -549,6 +553,25 @@
             <element signature="e#2370#2393#0" expanded="false" />
             <element signature="e#2430#2527#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#1638#1786#1" expanded="false" />
+            <element signature="e#1896#2019#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8997362">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

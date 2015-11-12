@@ -4,6 +4,8 @@ Formerly in TextTools
 """
 __author__ = 'adam'
 
+from TextCleaningTools import *
+
 
 class WordBagMaker(object):
     """
@@ -92,8 +94,6 @@ class WordBagMaker(object):
             if cleaner.clean(word) is False:
                 return False
         return True
-
-
 
 
 class TweetTextWordBagMaker(WordBagMaker):
