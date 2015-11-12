@@ -1,3 +1,6 @@
+"""
+Not sure whose work this is based on! Ack.
+"""
 # import re, csv, yaml, enchant
 import re
 import csv
@@ -7,9 +10,9 @@ from nltk.corpus import wordnet
 from nltk.metrics import edit_distance
 
 
-##################################################
-## Replacing Words Matching Regular Expressions ##
-##################################################
+#################################################
+# Replacing Words Matching Regular Expressions #
+#################################################
 
 replacement_patterns = [
     (r'won\'t', 'will not'),
@@ -41,6 +44,14 @@ class RegexpReplacer(object):
     def __init__(self, patterns=replacement_patterns):
         self.patterns = [(re.compile(regex), repl) for (regex, repl) in patterns]
 
+    def add_replacement_pattern(self, replacement_pattern):
+        """
+        Pushes an additional replacment pattern tuple into the list to apply
+        :param tuple replacement_pattern: Tuple with format (regex expression, string to insert)
+        """
+        new_pattern = re.compile(replacement_pattern[0], replacement_pattern[1])
+        self.patterns.append(new_pattern)
+
     def replace(self, text):
         s = text
 
@@ -64,9 +75,9 @@ class PunctuationReplacer(object):
         return s
 
 
-####################################
-## Replacing Repeating Characters ##
-####################################
+##################################
+# Replacing Repeating Characters #
+##################################
 
 class RepeatReplacer(object):
     """ Removes repeating characters until a valid word is found.
@@ -95,9 +106,9 @@ class RepeatReplacer(object):
             return repl_word
 
 
-######################################
-## Spelling Correction with Enchant ##
-######################################
+####################################
+# Spelling Correction with Enchant #
+####################################
 
 class SpellingReplacer(object):
     """ Replaces misspelled words with a likely suggestion based on shortest
@@ -137,9 +148,9 @@ class CustomSpellingReplacer(SpellingReplacer):
         self.max_dist = max_dist
 
 
-########################
-## Replacing Synonyms ##
-########################
+######################
+# Replacing Synonyms #
+######################
 
 class WordReplacer(object):
     """ WordReplacer that replaces a given word with a word from the word_map,
@@ -191,9 +202,9 @@ class YamlWordReplacer(WordReplacer):
         super(YamlWordReplacer, self).__init__(word_map)
 
 
-#######################################
-## Replacing Negations with Antonyms ##
-#######################################
+#####################################
+# Replacing Negations with Antonyms #
+#####################################
 
 class AntonymReplacer(object):
     def replace(self, word, pos=None):
@@ -258,5 +269,4 @@ class AntonymWordReplacer(WordReplacer, AntonymReplacer):
 
 if __name__ == '__main__':
     import doctest
-
     doctest.testmod()

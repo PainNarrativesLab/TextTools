@@ -6,7 +6,7 @@ from nltk.collocations import *
 import nltk.data
 from nltk.tokenize import word_tokenize
 
-from replacers import RegexpReplacer
+from StringReplacementTools import RegexpReplacer
 
 """
 
