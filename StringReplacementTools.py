@@ -268,5 +268,6 @@ class AntonymWordReplacer(WordReplacer, AntonymReplacer):
 
 
 if __name__ == '__main__':
+    print('jip')
     import doctest
     doctest.testmod()

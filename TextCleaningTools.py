@@ -1,6 +1,9 @@
 # Used for WordFilters
-import nltk
 import re
+
+import nltk
+from nltk.corpus import wordnet as wn
+
 
 # from nltk.replacers import RegexpReplacer
 
@@ -43,6 +46,26 @@ class IModifier(object):
         assert (text.count(" ") is 0)
 
 
+class IModifierList(object):
+    """
+    Interface for classes which act on a list of strings by modifying
+    the input strings and returning a list of modified strings.
+    Used for tasks like lemmatizing etc
+    """
+
+    def __init__(self):
+        pass
+
+    def process(self, wordbag, **kwargs):
+        """
+        Processes list of strings
+        :param wordbag: List of strings to process
+        :param kwargs:
+        :return: List of strings, modified
+        """
+        raise NotImplementedError
+
+
 class INgramFilter(object):
     """
     Interface for filters on ngrams
@@ -76,7 +99,7 @@ class URLCleaner(ICleaner):
         ICleaner.__init__(self)
 
     def clean(self, word):
-        if word[0:6] != '//t.co':
+        if word[ 0:6 ] != '//t.co':
             return True
         else:
             return False
@@ -92,7 +115,7 @@ class UsernameCleaner(ICleaner):
 
     def clean(self, word):
         assert (type(word) is str)
-        if word[0] != '@' and word[0:1] != '.@':
+        if word[ 0 ] != '@' and word[ 0:1 ] != '.@':
             return True
         else:
             return False
@@ -126,6 +149,7 @@ class RegexpReplacer(IModifier):
     Properties:
         _patterns: Tuple of compiled regex replacement patterns to apply
     """
+
     def __init__(self, replace_contractions=True):
         """
         Initialize regex and load default patterns
@@ -134,9 +158,13 @@ class RegexpReplacer(IModifier):
         self._patterns = ()
         self.contraction_patterns = [
             (r'won\'t', 'will not'),
+            (r'Won\'t', 'will not'),
             (r'can\'t', 'cannot'),
+            (r'Can\'t', 'cannot'),
             (r'i\'m', 'i am'),
+            (r'I\'m', 'i am'),
             (r'ain\'t', 'is not'),
+            (r'Ain\'t', 'is not'),
             (r'(\w+)\'ll', '\g<1> will'),
             (r'(\w+)n\'t', '\g<1> not'),
             (r'(\w+)\'ve', '\g<1> have'),
@@ -168,13 +196,13 @@ class RegexpReplacer(IModifier):
         self._patterns = list(self._patterns)
 
         # Now figure out what the hell we just received
-        if isinstance(patterns, tuple) and isinstance(patterns[0], str):
+        if isinstance(patterns, tuple) and isinstance(patterns[ 0 ], str):
             # The input is a single replacement pattern, so wrap it in a list
             patterns = list(patterns)
 
         # Now the input is (hopefully) something iterable containing pattern tuples
         for p in patterns:
-            new_pattern = (re.compile(p[0]), p[1])
+            new_pattern = (re.compile(p[ 0 ]), p[ 1 ])
             self._patterns.append(new_pattern)
 
         # re-tuple the stored patterns
@@ -205,28 +233,83 @@ class RegexpReplacer(IModifier):
         self._patterns = tuple(self._patterns)
 
 
-class Lemmatizer(IModifier):
+class Lemmatizer(IModifierList):
     """
-    Wrapper on nltk.stem.WordNetLemmatizer for lemmatizing words
+    Wrapper on nltk.stem.WordNetLemmatizer plus the part of speech tagger
+    for lemmatizing words
+
+    Attributes:
+        lemmatizer: The nltk wordnet lemmatizer instance
     """
 
     def __init__(self):
-        IModifier.__init__(self)
+        IModifierList.__init__(self)
         self.lemmatizer = nltk.stem.WordNetLemmatizer()
 
-    def process(self, text, **kwargs):
+    def process(self, wordbag):
         """
+        Lemmatizes the words in wordbag, taking into consideration their part of speech
         Args:
-            text: String to be lemmatized
+            wordbag: Bag of words (list of strings)
+        Returns:
+            Lemmatized list of strings
+        """
+        try:
+            lemmatized = [ ]
+            tagged = self._get_pos_tags(wordbag)
+            for word, tag in tagged:
+                # if the part of speech wasn't determined, lemmatize without pos
+                if tag is None:
+                    lemmatized.append(self.process_token(word))
+                else:
+                    lemmatized.append(self.lemmatizer.lemmatize(word, tag))
+            return lemmatized
+        except Exception as e:
+            print(e)
+
+    def process_token(self, text, **kwargs):
+        """
+        Lemmatizes a single token. Does not take into account pos
+        Args:
+            text: Single word string to be lemmatized
         Returns:
             Lemmatized string
         """
         try:
-            self._check_is_single_word(text)
+            # self._check_is_single_word(text)
             assert (type(text) is str)
             return self.lemmatizer.lemmatize(text)
         except Exception as e:
             print(e)
+
+    def _get_pos_tags(self, word_list):
+        """
+        Tags each word with its part of speech
+        Args:
+            word_list: Word bag (list of strings)
+        Returns:
+            Returns a list of tuples with the format (word, pos) where pos is the wordnet pos tag
+        """
+        return PartOfSpeechClassification.get_pos_tags(word_list)
+
+        # def _convert_treebank_tag_to_wordnet_pos(self, treebank_tag):
+        #     """
+        #     The nltk.pos_tag() is trained on the treebank corpus. So it returns
+        #     a different representation of the part of speech than the wordnet
+        #     lemmatizer is expecting. This handles the conversion.
+        #     :return: string
+        #     """
+        #     ADJ, ADJ_SAT, ADV, NOUN, VERB = 'a', 's', 'r', 'n', 'v'
+        #     if treebank_tag.startswith('J'):
+        #         return ADJ
+        #     elif treebank_tag.startswith('V'):
+        #         return VERB
+        #     elif treebank_tag.startswith('N'):
+        #         return NOUN
+        #     elif treebank_tag.startswith('R'):
+        #         return ADV
+        #     else:
+        #         return ''
 
 
 class PorterStemmer(IModifier):
@@ -253,6 +336,7 @@ class PorterStemmer(IModifier):
             return self.stemmer.stem(text)
         except Exception as e:
             print(e)
+
 
 ###################################
 # INgramFilter implementations    #
@@ -322,14 +406,57 @@ class WordFilter(INgramFilter):
         return collocation_finder.apply_word_filter(lambda w: w in self.filter_words)
 
 
-class TextClassification(object):
+class PartOfSpeechClassification(object):
     """
-    Tools for classifying text
+    Tools for classifying part of speech
     """
 
-    @staticmethod
-    def tag_parts_of_speech(word_list):
-        return nltk.pos_tag(word_list)
+    @classmethod
+    def get_pos_tags(cls, word_list):
+        """
+        Tags each word with its part of speech
+        Args:
+            word_list: Word bag (list of strings)
+        Returns:
+            Returns a list of tuples with the format (word, pos) where pos is the wordnet pos tag
+        """
+        return [ (word, cls._convert_treebank_tag_to_wordnet_pos(tag)) for word, tag in nltk.pos_tag(word_list) ]
+
+    @classmethod
+    def _convert_treebank_tag_to_wordnet_pos(cls, tag):
+        """
+        The nltk.pos_tag() is trained on the treebank corpus. So it returns
+        a different representation of the part of speech than the wordnet
+        lemmatizer is expecting. This handles the conversion.
+
+        Args:
+            tag: String penn_treebank tag
+
+        Returns:
+            Wordnet part of speech tag or None
+        """
+
+        def is_noun(tag):
+            return tag in [ 'NN', 'NNS', 'NNP', 'NNPS' ]
+
+        def is_verb(tag):
+            return tag in [ 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ' ]
+
+        def is_adverb(tag):
+            return tag in [ 'RB', 'RBR', 'RBS' ]
+
+        def is_adjective(tag):
+            return tag in [ 'JJ', 'JJR', 'JJS' ]
+
+        if is_adjective(tag):
+            return wn.ADJ
+        elif is_noun(tag):
+            return wn.NOUN
+        elif is_adverb(tag):
+            return wn.ADV
+        elif is_verb(tag):
+            return wn.VERB
+        return None
 
 
 # ------------------------------------------------------------ deprecated ---------------------------------

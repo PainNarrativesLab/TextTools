@@ -51,7 +51,7 @@ class WordBagMaker(object):
             bagmaker.add_to_cleaners(NumeralCleaner())
 
         Args:
-            :param icleaner: ICleaner inheriting object
+            icleaner: ICleaner inheriting object
         """
         assert(isinstance(icleaner, ICleaner))
         self._cleaners.append(icleaner)
@@ -61,7 +61,7 @@ class WordBagMaker(object):
         Processes list of strings into a word bag stored in self.masterbag
 
         Args:
-            :param to_process: List of strings to process
+            to_process: List of strings to process
         """
         assert(isinstance(to_process, list))
         for t in to_process:
@@ -173,3 +173,6 @@ class TweetTextWordBagMaker(WordBagMaker):
     #         tweet_tuple = (tweetid, words)
     #         self.tweet_tuples.append(tweet_tuple)
     #         self.masterbag += words
+
+
+
