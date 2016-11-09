@@ -19,32 +19,32 @@ class URLCleanerTest(unittest.TestCase):
     Removes some urls
     """
     def setUp(self):
-        self.object = URLCleaner()
+        self.object = URLFilter( )
 
     def test_clean(self):
         test = [('taco', True), ('//t.co', False), ('cat', True), ('//t.co', False)]
         for t in test:
-            self.assertEqual(self.object.clean(t[0]), t[1])
+            self.assertEqual( self.object.run( t[0 ] ), t[1 ] )
 
 
 class UsernameCleanerTest(unittest.TestCase):
     def setUp(self):
-        self.object = UsernameCleaner()
+        self.object = UsernameFilter( )
 
     def test_clean(self):
         test = [('taco', True), ('@taco', False), ('cat', True), ('@cat', False)]
         for t in test:
-            self.assertEqual(self.object.clean(t[0]), t[1])
+            self.assertEqual( self.object.run( t[0 ] ), t[1 ] )
 
 
 class NumeralCleanerTest(unittest.TestCase):
     def setUp(self):
-        self.object = NumeralCleaner()
+        self.object = NumeralFilter( )
 
     def test_clean(self):
         test = [('taco', True), (1, False), ('cat', True), ('3', False), (['taco'], False)]
         for t in test:
-            self.assertEqual(self.object.clean(t[0]), t[1])
+            self.assertEqual( self.object.run( t[0 ] ), t[1 ] )
 
 
 class LemmatizerTest(unittest.TestCase):
@@ -58,7 +58,7 @@ class LemmatizerTest(unittest.TestCase):
         self.assertIsInstance(self.object.lemmatizer, nltk.stem.WordNetLemmatizer)
 
     def test_process_excepts_if_not_string(self):
-        self.assertRaises(AssertionError, self.object.process(4))
+        self.assertRaises( AssertionError, self.object.run( 4 ) )
 
 
 class PorterStemmerTest(unittest.TestCase):
@@ -69,7 +69,7 @@ class PorterStemmerTest(unittest.TestCase):
         self.assertIsInstance(self.object.stemmer, nltk.stem.PorterStemmer)
 
     def test_process_excepts_if_not_string(self):
-        self.assertRaises(AssertionError, self.object.process(4))
+        self.assertRaises( AssertionError, self.object.run( 4 ) )
 
 
 # class TextFiltersTest(unittest.TestCase):

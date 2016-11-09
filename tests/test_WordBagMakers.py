@@ -35,7 +35,7 @@ class LemmatizerTest(unittest.TestCase):
         self.assertIsInstance(self.object.lemmatizer, nltk.stem.WordNetLemmatizer)
 
     def test_process_excepts_if_not_string(self):
-        self.assertRaises(AssertionError, self.object.process(4))
+        self.assertRaises( AssertionError, self.object.run( 4 ) )
 
 
 class PorterStemmerTest(unittest.TestCase):
@@ -46,7 +46,7 @@ class PorterStemmerTest(unittest.TestCase):
         self.assertIsInstance(self.object.stemmer, nltk.stem.PorterStemmer)
 
     def test_process_excepts_if_not_string(self):
-        self.assertRaises(AssertionError, self.object.process(4))
+        self.assertRaises( AssertionError, self.object.run( 4 ) )
 
 
 class WordBagMakerTest(unittest.TestCase):

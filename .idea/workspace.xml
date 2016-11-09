@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="607228ec-7341-400e-bab8-a3ea5519ee53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_WordBagMakers.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Constants.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sphinxapi.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/test_ConstantsAndUtilities.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/test_TextTools.py" afterPath="$PROJECT_DIR$/tests/test_TextCleaningTools.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProcessingTools/Filters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProcessingTools/Modifiers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProcessingTools/NgramFilters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProcessingTools/ProcessingModulesBases.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProcessingTools/WordProcessors.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProcessingTools/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StatisticalTools/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/ProcessingTools/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/ProcessingTools/test_Modifiers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/TextTools.iml" afterPath="$PROJECT_DIR$/.idea/TextTools.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StringReplacementTools.py" afterPath="$PROJECT_DIR$/StringReplacementTools.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MAKEFILE" afterPath="$PROJECT_DIR$/MAKEFILE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NgramTools.py" afterPath="$PROJECT_DIR$/NgramTools.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextCleaningTools.py" afterPath="$PROJECT_DIR$/TextCleaningTools.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WordBagMakers.py" afterPath="$PROJECT_DIR$/WordBagMakers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_TextCleaningTools.py" afterPath="$PROJECT_DIR$/tests/test_TextCleaningTools.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_WordBagMakers.py" afterPath="$PROJECT_DIR$/tests/test_WordBagMakers.py" />
     </list>
     <ignored path="TextTools.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +33,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/TextTools$Nosetests_in_IgnoreListFilter.coverage" NAME="Nosetests in IgnoreListFilter Coverage Results" MODIFIED="1478638838595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/ProcessingTools" />
     <SUITE FILE_PATH="coverage/TextTools$allTextToolsTests.coverage" NAME="allTextToolsTests Coverage Results" MODIFIED="1447888639956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TextTools$Nosetest_CaseConverterTest_test_happy_upper.coverage" NAME="Nosetest CaseConverterTest.test_happy_upper Coverage Results" MODIFIED="1478631040699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/ProcessingTools" />
+    <SUITE FILE_PATH="coverage/TextTools$Nosetest_NumeralFilterTest_test_happy_path_is_string.coverage" NAME="Nosetest NumeralFilterTest.test_happy_path_is_string Coverage Results" MODIFIED="1478648353076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/ProcessingTools" />
+    <SUITE FILE_PATH="coverage/TextTools$Nosetests_in_CaseConverterTest.coverage" NAME="Nosetests in CaseConverterTest Coverage Results" MODIFIED="1478631252879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/ProcessingTools" />
+    <SUITE FILE_PATH="coverage/TextTools$Nosetests_in_NumeralFilterTest.coverage" NAME="Nosetests in NumeralFilterTest Coverage Results" MODIFIED="1478648520879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/ProcessingTools" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -33,79 +48,129 @@
     <favorites_list name="TextTools" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TextCalcTools.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TextCalcTools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextStats.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TextStats.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordBagMakers.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-421">
-              <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_WordBagMakers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_WordBagMakers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#57#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SphinxService.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SphinxService.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#51#86#0" expanded="true" />
-                <marker date="1431731625000" expanded="true" signature="7527:7590" ph="SELECT quote... testimony_all" />
-                <marker date="1431731625000" expanded="true" signature="10373:10415" ph="INSERT INTO " />
-                <marker date="1431731625000" expanded="true" signature="10889:10952" ph="UPDATE quote... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="WordBagMakers.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-494">
+                  <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#79#110#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Filters.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ProcessingTools/Filters.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="649">
+                  <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#628#632#0" expanded="false" />
+                    <element signature="e#1391#1832#1" expanded="false" />
+                    <element signature="e#2182#2343#1" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Modifiers.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ProcessingTools/Modifiers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="909">
+                  <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#208#217#0" expanded="true" />
+                    <element signature="e#535#560#0" expanded="false" />
+                    <element signature="e#613#956#0" expanded="false" />
+                    <element signature="e#992#1464#0" expanded="false" />
+                    <element signature="e#1265#1461#0" expanded="false" />
+                    <element signature="e#2260#5576#0" expanded="false" />
+                    <element signature="e#3683#4640#0" expanded="false" />
+                    <element signature="e#4687#5007#0" expanded="false" />
+                    <element signature="e#5090#5576#0" expanded="false" />
+                    <element signature="e#5616#8272#0" expanded="false" />
+                    <element signature="e#7166#8272#0" expanded="false" />
+                    <element signature="e#8320#9804#0" expanded="false" />
+                    <element signature="e#9844#10499#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ProcessingModulesBases.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ProcessingTools/ProcessingModulesBases.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1178">
+                  <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+                  <folding>
+                    <element signature="e#56#77#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WordProcessors.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ProcessingTools/WordProcessors.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-155">
+                  <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test_WordBagMakers.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/test_WordBagMakers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1311">
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#57#72#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="test_Modifiers.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/ProcessingTools/test_Modifiers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="228">
+                  <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test_Filters.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="244">
+                  <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
@@ -124,10 +189,17 @@
         <option value="$PROJECT_DIR$/ConstantsAndUtilities.py" />
         <option value="$PROJECT_DIR$/tests/test_WordBagMakers.py" />
         <option value="$PROJECT_DIR$/tests/test_TextCleaningTools.py" />
-        <option value="$PROJECT_DIR$/TextCleaningTools.py" />
         <option value="$PROJECT_DIR$/Constants.py" />
-        <option value="$PROJECT_DIR$/WordBagMakers.py" />
         <option value="$PROJECT_DIR$/StringReplacementTools.py" />
+        <option value="$PROJECT_DIR$/ProcessingTools/Cleaners.py" />
+        <option value="$PROJECT_DIR$/tests/ProcessingTools/test_Modifiers.py" />
+        <option value="$PROJECT_DIR$/TextCleaningTools.py" />
+        <option value="$PROJECT_DIR$/ProcessingTools/Modifiers.py" />
+        <option value="$PROJECT_DIR$/WordBagMakers.py" />
+        <option value="$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py" />
+        <option value="$PROJECT_DIR$/ProcessingTools/ProcessingModulesBases.py" />
+        <option value="$PROJECT_DIR$/ProcessingTools/Filters.py" />
+        <option value="$PROJECT_DIR$/ProcessingTools/WordProcessors.py" />
       </list>
     </option>
   </component>
@@ -203,6 +275,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -213,10 +299,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProcessingTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProcessingTools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -228,11 +358,126 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IOMNarratives" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../iPythonFiles/BaseClasses" />
   </component>
-  <component name="RunManager" selected="Python tests.allTextToolsTests">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Nosetests in NumeralFilterTest">
+    <configuration default="false" name="Nosetest CaseConverterTest.test_happy_upper" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ProcessingTools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TextTools" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/ProcessingTools/test_Modifiers.py" />
+      <option name="CLASS_NAME" value="CaseConverterTest" />
+      <option name="METHOD_NAME" value="test_happy_upper" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetests in CaseConverterTest" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ProcessingTools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TextTools" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/ProcessingTools/test_Modifiers.py" />
+      <option name="CLASS_NAME" value="CaseConverterTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetests in IgnoreListFilter" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ProcessingTools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TextTools" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py" />
+      <option name="CLASS_NAME" value="IgnoreListFilter" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetests in NumeralFilterTest" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ProcessingTools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TextTools" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py" />
+      <option name="CLASS_NAME" value="NumeralFilterTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetest NumeralFilterTest.test_happy_path_is_string" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ProcessingTools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TextTools" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py" />
+      <option name="CLASS_NAME" value="NumeralFilterTest" />
+      <option name="METHOD_NAME" value="test_happy_path_is_string" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -463,9 +708,23 @@
       <option name="USE_PARAM" value="true" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python tests.allTextToolsTests" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest CaseConverterTest.test_happy_upper" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in CaseConverterTest" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in IgnoreListFilter" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in NumeralFilterTest" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Nosetest NumeralFilterTest.test_happy_path_is_string" />
     </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in NumeralFilterTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest NumeralFilterTest.test_happy_path_is_string" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in IgnoreListFilter" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in CaseConverterTest" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest CaseConverterTest.test_happy_upper" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -484,8 +743,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="allTextToolsTests - 2015.11.18 at 15h 17m 21s.xml">
-      <configuration name="allTextToolsTests" configurationId="tests" />
+    <history-entry file="Nosetest_NumeralFilterTest_test_happy_path_is_string - 2016.11.08 at 15h 38m 38s.xml">
+      <configuration name="Nosetest NumeralFilterTest.test_happy_path_is_string" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_NumeralFilterTest_test_happy_path_is_string - 2016.11.08 at 15h 39m 13s.xml">
+      <configuration name="Nosetest NumeralFilterTest.test_happy_path_is_string" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_IgnoreListFilter - 2016.11.08 at 13h 00m 25s.xml">
+      <configuration name="Nosetests in IgnoreListFilter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_IgnoreListFilter - 2016.11.08 at 13h 00m 36s.xml">
+      <configuration name="Nosetests in IgnoreListFilter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_IgnoreListFilter - 2016.11.08 at 13h 00m 37s.xml">
+      <configuration name="Nosetests in IgnoreListFilter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_IgnoreListFilter - 2016.11.08 at 13h 00m 38s.xml">
+      <configuration name="Nosetests in IgnoreListFilter" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_NumeralFilterTest - 2016.11.08 at 15h 38m 08s.xml">
+      <configuration name="Nosetests in NumeralFilterTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_NumeralFilterTest - 2016.11.08 at 15h 38m 24s.xml">
+      <configuration name="Nosetests in NumeralFilterTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_NumeralFilterTest - 2016.11.08 at 15h 39m 18s.xml">
+      <configuration name="Nosetests in NumeralFilterTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_NumeralFilterTest - 2016.11.08 at 15h 42m 01s.xml">
+      <configuration name="Nosetests in NumeralFilterTest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -493,23 +779,23 @@
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2482066" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.1061693" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.8938307" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2482066" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49426112" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -525,77 +811,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TextCalcTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextStats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextCleaningTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#2593#2616#0" expanded="false" />
-            <element signature="e#2653#2795#0" expanded="false" />
-            <element signature="e#2927#2950#0" expanded="false" />
-            <element signature="e#2987#3084#0" expanded="false" />
-            <element signature="e#12740#13669#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Constants.py" />
-    <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_TextCleaningTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="120" column="71" selection-start-line="100" selection-start-column="0" selection-end-line="120" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_WordBagMakers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#57#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StringReplacementTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
-          <folding>
-            <element signature="e#83#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -626,11 +859,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#2593#2616#0" expanded="false" />
-            <element signature="e#2653#2795#0" expanded="false" />
-            <element signature="e#2927#2950#0" expanded="false" />
-            <element signature="e#2987#3084#0" expanded="false" />
-            <element signature="e#12740#13669#0" expanded="false" />
+            <element signature="e#13597#14526#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -640,7 +869,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#79#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -648,6 +879,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="120" column="71" selection-start-line="100" selection-start-column="0" selection-end-line="120" selection-end-column="71" />
+          <folding>
+            <element signature="e#643#658#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,7 +900,7 @@
         <state relative-caret-position="0">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
           <folding>
-            <element signature="e#83#92#0" expanded="true" />
+            <element signature="e#83#92#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -708,11 +942,7 @@
           <caret line="322" column="0" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#2593#2616#0" expanded="false" />
-            <element signature="e#2653#2795#0" expanded="false" />
-            <element signature="e#2927#2950#0" expanded="false" />
-            <element signature="e#2987#3084#0" expanded="false" />
-            <element signature="e#12740#13669#0" expanded="false" />
+            <element signature="e#13597#14526#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -729,7 +959,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -738,7 +970,7 @@
         <state relative-caret-position="0">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
           <folding>
-            <element signature="e#83#92#0" expanded="true" />
+            <element signature="e#83#92#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -780,11 +1012,7 @@
           <caret line="322" column="0" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#2593#2616#0" expanded="false" />
-            <element signature="e#2653#2795#0" expanded="false" />
-            <element signature="e#2927#2950#0" expanded="false" />
-            <element signature="e#2987#3084#0" expanded="false" />
-            <element signature="e#12740#13669#0" expanded="false" />
+            <element signature="e#13597#14526#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -801,7 +1029,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -810,7 +1040,7 @@
         <state relative-caret-position="0">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
           <folding>
-            <element signature="e#83#92#0" expanded="true" />
+            <element signature="e#83#92#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -848,6 +1078,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2242">
           <caret line="120" column="71" selection-start-line="100" selection-start-column="0" selection-end-line="120" selection-end-column="71" />
+          <folding>
+            <element signature="e#643#658#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -864,7 +1097,7 @@
         <state relative-caret-position="57">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#51#86#0" expanded="true" />
+            <element signature="e#51#86#0" expanded="false" />
             <marker date="1431731625000" expanded="true" signature="7527:7590" ph="SELECT quote... testimony_all" />
             <marker date="1431731625000" expanded="true" signature="10373:10415" ph="INSERT INTO " />
             <marker date="1431731625000" expanded="true" signature="10889:10952" ph="UPDATE quote... " />
@@ -872,10 +1105,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextCalcTools.py">
+    <entry file="file://$PROJECT_DIR$/Constants.py" />
+    <entry file="file://$PROJECT_DIR$/tests/test_ConstantsAndUtilities.py" />
+    <entry file="file://$PROJECT_DIR$/TextFiltration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="-3553">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StringReplacementTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="270" column="14" selection-start-line="270" selection-start-column="14" selection-end-line="270" selection-end-column="14" />
+          <folding>
+            <element signature="e#83#92#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -888,46 +1143,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Constants.py" />
-    <entry file="file://$PROJECT_DIR$/tests/test_ConstantsAndUtilities.py" />
     <entry file="file://$PROJECT_DIR$/TextCleaningTools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-760">
-          <caret line="399" column="36" selection-start-line="399" selection-start-column="36" selection-end-line="399" selection-end-column="36" />
+        <state relative-caret-position="-5510">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding>
-            <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#2593#2616#0" expanded="false" />
-            <element signature="e#2653#2795#0" expanded="false" />
-            <element signature="e#2927#2950#0" expanded="false" />
-            <element signature="e#2987#3084#0" expanded="false" />
-            <element signature="e#12740#13669#0" expanded="false" />
+            <element signature="e#13159#13514#0" expanded="false" />
+            <element signature="e#13597#14526#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextFiltration.py">
+    <entry file="file://$PROJECT_DIR$/TextCalcTools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3553">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StringReplacementTools.py">
+    <entry file="file://$PROJECT_DIR$/ProcessingTools/NgramFilters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="270" column="14" selection-start-line="270" selection-start-column="14" selection-end-line="270" selection-end-column="14" />
-          <folding>
-            <element signature="e#83#92#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1102">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_WordBagMakers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="-1311">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#57#72#0" expanded="true" />
@@ -935,11 +1180,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ProcessingTools/test_Modifiers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ProcessingTools/test_Filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProcessingTools/Modifiers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="909">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+          <folding>
+            <element signature="e#208#217#0" expanded="true" />
+            <element signature="e#535#560#0" expanded="false" />
+            <element signature="e#613#956#0" expanded="false" />
+            <element signature="e#992#1464#0" expanded="false" />
+            <element signature="e#1265#1461#0" expanded="false" />
+            <element signature="e#2260#5576#0" expanded="false" />
+            <element signature="e#3683#4640#0" expanded="false" />
+            <element signature="e#4687#5007#0" expanded="false" />
+            <element signature="e#5090#5576#0" expanded="false" />
+            <element signature="e#5616#8272#0" expanded="false" />
+            <element signature="e#7166#8272#0" expanded="false" />
+            <element signature="e#8320#9804#0" expanded="false" />
+            <element signature="e#9844#10499#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProcessingTools/Filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="649">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding>
+            <element signature="e#628#632#0" expanded="false" />
+            <element signature="e#1391#1832#1" expanded="false" />
+            <element signature="e#2182#2343#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProcessingTools/ProcessingModulesBases.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding>
+            <element signature="e#56#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProcessingTools/WordProcessors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WordBagMakers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-421">
-          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="-494">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#79#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

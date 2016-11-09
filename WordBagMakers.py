@@ -6,22 +6,79 @@ __author__ = 'adam'
 
 from TextCleaningTools import *
 
+from ProcessingTools.ProcessingModulesBases import IProcessor
+# class IProcessor(object):
+#
+#     def __init__(self):
+#         self._modifiers = []
+#         self._listmodifiers = [ ]
+#         self._filters = []
+#         self._ngram_filters = []
+#
+#     def add_to_modifiers(self, imodifier):
+#         """
+#         Adds an object which does modification to the que of modifiers which get
+#         called by _check_unwanted()
+#         Example:
+#             bagmaker.add_to_cleaners(URLFilter())
+#             bagmaker.add_to_cleaners(UsernameFilter())
+#             bagmaker.add_to_cleaners(NumeralFilter())
+#
+#         Args:
+#             icleaner: IFilter inheriting object
+#         """
+#         if isinstance(imodifier, IModifier):
+#             self._modifiers.append(imodifier)
+#         elif isinstance(imodifier, IModifierList):
+#             self._modifiers.append( imodifier )
+#         else:
+#             raise ValueError
+#
+#     def add_to_filters(self, ifilter):
+#         """
+#         Adds an object which does filtration to the que of filtration
+#         Example:
+#             bagmaker.add_to_cleaners(URLFilter())
+#             bagmaker.add_to_cleaners(UsernameFilter())
+#             bagmaker.add_to_cleaners(NumeralFilter())
+#
+#         Args:
+#             ifilter: IFilter inheriting object
+#         """
+#         if isinstance(ifilter, IFilter):
+#             self._filters.append(ifilter)
+#         elif isinstance(ifilter, INgramFilter):
+#             self._ngram_filters.append(ifilter)
+#         else:
+#             raise ValueError
+#
+#     def process(self, to_process, **kwargs):
+#         """
+#         The main interface
+#         Args:
+#             to_process: Something which will be processed
+#         """
+#         raise NotImplementedError
 
-class WordBagMaker(object):
+class WordBagMaker(IProcessor):
     """
     General class for taking something with strings and processing the text for bag of words type analyses.
 
-    Before running the process command, all lists of strings to ignore should be loaded using add_to_ignorelist()
+    Before running the run command, all lists of strings to ignore should be loaded using add_to_ignorelist()
 
     Attributes:
-        _cleaners: List of ICleaner objects
+        _cleaners: List of IFilter objects
         masterbag: List containing all words
         _ignore: Tuple of strings to ignore while filtering
     """
 
     def __init__(self):
+        super().__init__()
         self._ignore = ()
-        self._cleaners = []
+        # self._modifiers = []
+        # self._listmodifiers = [ ]
+        # self._filters = []
+        # self._cleaners = []
         self.masterbag = []
 
     def add_to_ignorelist(self, list_to_ignore):
@@ -41,31 +98,65 @@ class WordBagMaker(object):
         self._ignore = set(self._ignore)
         self._ignore = tuple(self._ignore)
 
-    def add_to_cleaners(self, icleaner):
-        """
-        Adds an object which does cleaning to the que of cleaners which get
-        called by _check_unwanted()
-        Example:
-            bagmaker.add_to_cleaners(URLCleaner())
-            bagmaker.add_to_cleaners(UsernameCleaner())
-            bagmaker.add_to_cleaners(NumeralCleaner())
+    # def add_to_cleaners(self, icleaner):
+    #     """
+    #     Adds an object which does cleaning to the que of cleaners which get
+    #     called by _check_unwanted()
+    #     Example:
+    #         bagmaker.add_to_cleaners(URLFilter())
+    #         bagmaker.add_to_cleaners(UsernameFilter())
+    #         bagmaker.add_to_cleaners(NumeralFilter())
+    #
+    #     Args:
+    #         icleaner: IFilter inheriting object
+    #     """
+    #     assert(isinstance(icleaner, IFilter))
+    #     self._cleaners.append(icleaner)
+    #
+    # def add_to_modifiers(self, imodifier):
+    #     """
+    #     Adds an object which does modification to the que of modifiers which get
+    #     called by _check_unwanted()
+    #     Example:
+    #         bagmaker.add_to_cleaners(URLFilter())
+    #         bagmaker.add_to_cleaners(UsernameFilter())
+    #         bagmaker.add_to_cleaners(NumeralFilter())
+    #
+    #     Args:
+    #         icleaner: IFilter inheriting object
+    #     """
+    #     if isinstance(imodifier, IModifier):
+    #         self._modifiers.append(imodifier)
+    #     elif isinstance(imodifier, IModifierList):
+    #         self._modifiers.append( imodifier )
+    #     else:
+    #         raise ImportWarning
+    #
+    # def add_to_filters(self, ifilter):
+    #     """
+    #     Adds an object which does filtration to the que of filtration
+    #     Example:
+    #         bagmaker.add_to_cleaners(URLFilter())
+    #         bagmaker.add_to_cleaners(UsernameFilter())
+    #         bagmaker.add_to_cleaners(NumeralFilter())
+    #
+    #     Args:
+    #         ifilter: IFilter inheriting object
+    #     """
+    #     assert(isinstance(ifilter, INgramFilter))
+    #     self._filters.append(ifilter)
 
-        Args:
-            icleaner: ICleaner inheriting object
-        """
-        assert(isinstance(icleaner, ICleaner))
-        self._cleaners.append(icleaner)
 
     def process(self, to_process):
         """
         Processes list of strings into a word bag stored in self.masterbag
 
         Args:
-            to_process: List of strings to process
+            to_process: List of strings to run
         """
         assert(isinstance(to_process, list))
         for t in to_process:
-            # process text
+            # run text
             words = self._make_wordbag(t)
             words = [w for w in words if self._check_unwanted(w) and w not in self._ignore]
             self.masterbag += words
@@ -85,7 +176,7 @@ class WordBagMaker(object):
     def _check_unwanted(self, word):
         """
         Args:
-            word: String to evaluate with ICleaner objects in _cleaners
+            word: String to evaluate with IFilter objects in _cleaners
         Returns:
             False if the the string is to be left out
             True if the string is to be included
@@ -100,10 +191,10 @@ class TweetTextWordBagMaker(WordBagMaker):
     """
     This takes a list of dictionaries containing tweetID and tweetText and processes the texts for bag of words type analyses.
 
-    Before running the process command, all lists of strings to ignore should be loaded using add_to_ignorelist()
+    Before running the run command, all lists of strings to ignore should be loaded using add_to_ignorelist()
 
     Attributes:
-        _cleaners: List of ICleaner objects
+        _cleaners: List of IFilter objects
         masterbag: List containing all words
         _ignore: Tuple of strings to ignore while filtering
         tweet_tuples: List containing tuples with the structure (tweetID, [list of words in tweet])
@@ -126,53 +217,11 @@ class TweetTextWordBagMaker(WordBagMaker):
         """
         for t in to_process:
             tweetid = t['tweetID']
-            # process text
+            # run text
             words = self._make_wordbag(t['tweetText'])
             words = [w for w in words if self._check_unwanted(w) and w not in self._ignore]
-            # process tuple
+            # run tuple
             tweet_tuple = (tweetid, words)
             self.tweet_tuples.append(tweet_tuple)
             self.masterbag += words
-
-    # def OLDprocess(self, list_of_dicts):
-    #     for t in list(self.results):
-    #         tweetid = t['tweetID']
-    #         #process text
-    #         words = [word for sent in sent_tokenize(t['tweetText']) for word in word_tokenize(sent)]
-    #         words = [w.lower() for w in words]
-    #         words = [w for w in words if w not in Ignore.punctuation]  #remove punctuation
-    #         words = [w for w in words if w not in Ignore.fragments]  #remove fragments
-    #         words = [w for w in words if w[0] != '@']  #Get rid of usernames
-    #         words = [w for w in words if w[0:6] != '//t.co']  #Remove some urls
-    #         words = [w for w in words if w not in Ignore.words['socialmediaterms']]  #Remove terms from social media
-    #         words = [w for w in words if w not in nltk.corpus.stopwords.words('english')]  #Remove stopwords
-    #         #process tuple
-    #         tweet_tuple = (tweetid, words)
-    #         self.tweet_tuples.append(tweet_tuple)
-    #         self.masterbag += words
-        # def process(self, list_of_dicts):
-    #     """
-    #     Processes the tweet texts
-    #     Most recent execution time 599.286342144 sec for 732683 tweets
-    #     Moved stopwords filtration first: 891.928412914 for 732683 tweets
-    #     Merged stopwords into ignore list: 234.204810858
-    #     1 loops, best of 3: 14min 56s per loop
-    #
-    #     Args:
-    #         list_of_dicts: List of dictionaries with keys tweetID and tweetText
-    #     """
-    #     for t in list_of_dicts:
-    #         tweetid = t['tweetID']
-    #         # process text
-    #         words = self._make_wordbag(t['tweetText'])
-    #         # words = self._filter_stopwords(words)
-    #         words = self._filter_ignored_terms(words)
-    #         words = self._filter_usernames(words)
-    #         words = self._filter_urls(words)
-    #         # process tuple
-    #         tweet_tuple = (tweetid, words)
-    #         self.tweet_tuples.append(tweet_tuple)
-    #         self.masterbag += words
-
-
 

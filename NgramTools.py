@@ -19,7 +19,7 @@ class NgramGetter(object):
         sorted_ngrams: List of tuples sorted by self.scored_ngrams
         top_pmi: Variable number of n-grams with the highest Pointwise Mutual Information (i.e., which occur together
         more often than would be expected)
-        word_bag: List of text to process
+        word_bag: List of text to run
     """
 
     def __init__(self):
