@@ -119,3 +119,21 @@ class NumeralFilter( IFilter ):
         else:
             return False
 
+
+class PunctuationFilter(IFilter):
+    """
+    Filters out punctuation
+    """
+
+    __name__ = 'PunctuationFilter'
+
+    def __init__( self ):
+        super( ).__init__(  )
+
+    def run( self, word, **kwargs ):
+        pass
+
+        # if isinstance(word,  str):
+        #     return word.isalpha( )
+        # else:
+        #     return False

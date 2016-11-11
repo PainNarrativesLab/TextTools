@@ -7,58 +7,6 @@ __author__ = 'adam'
 from TextCleaningTools import *
 
 from ProcessingTools.ProcessingModulesBases import IProcessor
-# class IProcessor(object):
-#
-#     def __init__(self):
-#         self._modifiers = []
-#         self._listmodifiers = [ ]
-#         self._filters = []
-#         self._ngram_filters = []
-#
-#     def add_to_modifiers(self, imodifier):
-#         """
-#         Adds an object which does modification to the que of modifiers which get
-#         called by _check_unwanted()
-#         Example:
-#             bagmaker.add_to_cleaners(URLFilter())
-#             bagmaker.add_to_cleaners(UsernameFilter())
-#             bagmaker.add_to_cleaners(NumeralFilter())
-#
-#         Args:
-#             icleaner: IFilter inheriting object
-#         """
-#         if isinstance(imodifier, IModifier):
-#             self._modifiers.append(imodifier)
-#         elif isinstance(imodifier, IModifierList):
-#             self._modifiers.append( imodifier )
-#         else:
-#             raise ValueError
-#
-#     def add_to_filters(self, ifilter):
-#         """
-#         Adds an object which does filtration to the que of filtration
-#         Example:
-#             bagmaker.add_to_cleaners(URLFilter())
-#             bagmaker.add_to_cleaners(UsernameFilter())
-#             bagmaker.add_to_cleaners(NumeralFilter())
-#
-#         Args:
-#             ifilter: IFilter inheriting object
-#         """
-#         if isinstance(ifilter, IFilter):
-#             self._filters.append(ifilter)
-#         elif isinstance(ifilter, INgramFilter):
-#             self._ngram_filters.append(ifilter)
-#         else:
-#             raise ValueError
-#
-#     def process(self, to_process, **kwargs):
-#         """
-#         The main interface
-#         Args:
-#             to_process: Something which will be processed
-#         """
-#         raise NotImplementedError
 
 class WordBagMaker(IProcessor):
     """
@@ -75,10 +23,6 @@ class WordBagMaker(IProcessor):
     def __init__(self):
         super().__init__()
         self._ignore = ()
-        # self._modifiers = []
-        # self._listmodifiers = [ ]
-        # self._filters = []
-        # self._cleaners = []
         self.masterbag = []
 
     def add_to_ignorelist(self, list_to_ignore):
@@ -97,55 +41,6 @@ class WordBagMaker(IProcessor):
         [self._ignore.append(i) for i in list_to_ignore]
         self._ignore = set(self._ignore)
         self._ignore = tuple(self._ignore)
-
-    # def add_to_cleaners(self, icleaner):
-    #     """
-    #     Adds an object which does cleaning to the que of cleaners which get
-    #     called by _check_unwanted()
-    #     Example:
-    #         bagmaker.add_to_cleaners(URLFilter())
-    #         bagmaker.add_to_cleaners(UsernameFilter())
-    #         bagmaker.add_to_cleaners(NumeralFilter())
-    #
-    #     Args:
-    #         icleaner: IFilter inheriting object
-    #     """
-    #     assert(isinstance(icleaner, IFilter))
-    #     self._cleaners.append(icleaner)
-    #
-    # def add_to_modifiers(self, imodifier):
-    #     """
-    #     Adds an object which does modification to the que of modifiers which get
-    #     called by _check_unwanted()
-    #     Example:
-    #         bagmaker.add_to_cleaners(URLFilter())
-    #         bagmaker.add_to_cleaners(UsernameFilter())
-    #         bagmaker.add_to_cleaners(NumeralFilter())
-    #
-    #     Args:
-    #         icleaner: IFilter inheriting object
-    #     """
-    #     if isinstance(imodifier, IModifier):
-    #         self._modifiers.append(imodifier)
-    #     elif isinstance(imodifier, IModifierList):
-    #         self._modifiers.append( imodifier )
-    #     else:
-    #         raise ImportWarning
-    #
-    # def add_to_filters(self, ifilter):
-    #     """
-    #     Adds an object which does filtration to the que of filtration
-    #     Example:
-    #         bagmaker.add_to_cleaners(URLFilter())
-    #         bagmaker.add_to_cleaners(UsernameFilter())
-    #         bagmaker.add_to_cleaners(NumeralFilter())
-    #
-    #     Args:
-    #         ifilter: IFilter inheriting object
-    #     """
-    #     assert(isinstance(ifilter, INgramFilter))
-    #     self._filters.append(ifilter)
-
 
     def process(self, to_process):
         """
