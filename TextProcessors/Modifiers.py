@@ -72,13 +72,34 @@ class CaseConverter(IModifier):
 
         if self.trim_whitespace is True:
             text = text.strip()
-            print('trim', text)
+            # print('trim', text)
 
         if self.lowercase_all is True:
             return text.lower()
-            print('lower', text)
+            # print('lower', text)
         else:
             return text.upper( )
+
+
+class UnicodeConverter(IModifier):
+    def __init__(self):
+        super().__init__()
+
+    def run(self, text, **kwargs):
+        return text.decode( 'utf-8' )
+
+class WierdBPrefixConverter(IModifier):
+    """
+    Something in the unicode conversion yields a lot of words prefixed with b'. This removes
+    the offending prefix
+    """
+    def __init__(self):
+        super().__init__()
+
+    def run(self, text, **kwargs):
+        if text[:2] == "b'":
+            text = text[2:]
+        return text
 
 
 class RegexpReplacer(IModifier):
@@ -303,8 +324,6 @@ class PartOfSpeechClassification(object):
         elif is_verb(tag):
             return wn.VERB
         return None
-
-
 
 class PorterStemmer(IModifier):
     """

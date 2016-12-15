@@ -7,6 +7,8 @@ Created by adam on 11/8/16
 """
 __author__ = 'adam'
 
+import string
+import dawg
 
 class IFilter( object ):
     """
@@ -67,6 +69,45 @@ class IgnoreListFilter(IFilter):
         self._ignore = set( self._ignore )
         self._ignore = tuple( self._ignore )
 
+class IgnoreDawgFilter(IFilter):
+    """
+        Detects whether the string is in the ignore dawg and returns
+        a boolean so it can be removed.
+        TODO: Make this better
+        """
+    __name__ = 'IgnoreDawgFilter'
+
+    def __init__( self ):
+        super( ).__init__(  )
+        self._ignore = ()
+
+    def run( self, word, **kwargs ):
+        """Run the filter using a dawg instead of tuple"""
+        if word in self._ignore_dawg:
+            return False
+        else:
+            return True
+
+    def add_to_ignorelist( self, to_ignore ):
+        """
+        Add a list of strings to the internally held tuple of strings to ignore in processing text
+        Example:
+            bagmaker = WordBagMaker()
+            bagmaker.add_to_ignorelist(ignore.get_list())
+            bagmaker.add_to_ignorelist(nltk.corpus.stopwords.words('english'))
+            bagmaker.add_to_ignorelist(list(string.punctuation))
+
+        Args:
+            list_to_ignore: List of strings to ignore.
+        """
+        #wrap in list so can accept non-iterables
+        to_ignore = [to_ignore] if isinstance(to_ignore, str) else to_ignore
+        self._ignore = list( self._ignore )
+        [ self._ignore.append( i ) for i in to_ignore ]
+        self._ignore = set( self._ignore )
+        self._ignore = tuple( self._ignore )
+        self._ignore_dawg = dawg.DAWG( self._ignore )
+
 
 class URLFilter( IFilter ):
     """
@@ -115,7 +156,8 @@ class NumeralFilter( IFilter ):
 
     def run( self, word, **kwargs ):
         if isinstance(word,  str):
-            return word.isalpha( )
+            return not word.isnumeric()
+            # return word.isalpha( )
         else:
             return False
 
@@ -129,11 +171,12 @@ class PunctuationFilter(IFilter):
 
     def __init__( self ):
         super( ).__init__(  )
+        self.to_avoid = tuple(string.punctuation)
 
     def run( self, word, **kwargs ):
-        pass
-
-        # if isinstance(word,  str):
-        #     return word.isalpha( )
-        # else:
-        #     return False
+        """
+        Checks whether word is in a list of punctuation.
+        NB, it returns the inverse value because the processor
+        removes things for which a filter returns false
+        """
+        return word not in self.to_avoid

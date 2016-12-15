@@ -6,7 +6,7 @@ __author__ = 'adam'
 
 from TextCleaningTools import *
 
-from ProcessingTools.ProcessingModulesBases import IProcessor
+from TextProcessors.Processors import IProcessor
 
 class WordBagMaker(IProcessor):
     """

@@ -92,5 +92,3 @@ class WordFilter(INgramFilter):
         """
         assert isinstance(collocation_finder, nltk.collocations.AbstractCollocationFinder)
         return collocation_finder.apply_word_filter(lambda w: w in self.filter_words)
-
-

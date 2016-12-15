@@ -1,6 +1,6 @@
 import unittest
 
-from ProcessingTools import Modifiers as M
+from TextProcessors import Modifiers as M
 
 class CaseConverterTest( unittest.TestCase ):
     def test_happy_lower( self ):

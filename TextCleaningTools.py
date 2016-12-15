@@ -4,10 +4,10 @@ import re
 import nltk
 from nltk.corpus import wordnet as wn
 
-from ProcessingTools.Filters import *
+from TextProcessors.Filters import *
 
-from ProcessingTools.NgramFilters import *
-from ProcessingTools.Modifiers import *
+from TextProcessors.NgramFilters import *
+from TextProcessors.Modifiers import *
 
 # from nltk.replacers import RegexpReplacer
 
